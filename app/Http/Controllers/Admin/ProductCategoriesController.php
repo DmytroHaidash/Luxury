@@ -29,7 +29,7 @@ class ProductCategoriesController extends Controller
     }
 
     /**
-     * @param  Request  $request
+     * @param  Request $request
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
@@ -38,11 +38,25 @@ class ProductCategoriesController extends Controller
         $product_category = new ProductCategories;
         $product_category->makeTranslation(['title'])->save();
 
+        if ($request->hasFile('cover')) {
+            $product_category->addMediaFromRequest('cover')
+                ->usingFileName(makeFileName($request->file('cover')))
+                ->toMediaCollection('cover');
+        }
+        if ($request->has('meta')) {
+            foreach ($request->get('meta') as $key => $meta) {
+                $product_category->meta()->updateOrCreate([
+                    'metable_id' => $product_category->id
+                ], [
+                    $key => $meta
+                ]);
+            }
+        }
         return redirect()->route('admin.product_categories.edit', $product_category);
     }
 
     /**
-     * @param  ProductCategories  $product_category
+     * @param  ProductCategories $product_category
      * @return View
      */
     public function edit(ProductCategories $product_category): View
@@ -51,14 +65,30 @@ class ProductCategoriesController extends Controller
     }
 
     /**
-     * @param  Request  $request
-     * @param  ProductCategories  $product_category
+     * @param  Request $request
+     * @param  ProductCategories $product_category
      * @return RedirectResponse
      */
     public function update(Request $request, ProductCategories $product_category): RedirectResponse
     {
         $product_category->makeTranslation(['title'])->save();
 
+        if ($request->hasFile('cover')) {
+            $product_category->clearMediaCollection('cover');
+            $product_category->addMediaFromRequest('cover')
+                ->usingFileName(makeFileName($request->file('cover')))
+                ->toMediaCollection('cover');
+        }
+
+        if ($request->has('meta')) {
+            foreach ($request->get('meta') as $key => $meta) {
+                $product_category->meta()->updateOrCreate([
+                    'metable_id' => $product_category->id
+                ], [
+                    $key => $meta
+                ]);
+            }
+        }
         return redirect()->route('admin.product_categories.edit', $product_category);
     }
 

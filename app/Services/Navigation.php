@@ -37,13 +37,13 @@ class Navigation
                 'name' => __('nav.about'),
                 'link' => url('/about')
             ],
-            (object) [
+            /*(object) [
                 'name' => __('nav.collection'),
                 'link' => null,
                 'children' => $this->exhibits->map(function ($item) {
                     return $this->handleChild($item);
                 })
-            ],
+            ],*/
 //            (object) [
 //                'name' => __('nav.publications'),
 //                'link' => null,
@@ -55,19 +55,19 @@ class Navigation
                 'name' => __('nav.blog'),
                 'link' => route('client.blog.index')
             ],
-            (object) [
+            /*(object) [
                 'name' => __('nav.expertise'),
                 'link' => url('/expertise')
-            ],
+            ],*/
             /*(object) [
                 'name' => __('nav.exhibitions'),
                 'link' => route('client.exhibitions.index')
             ],*/
-            (object) [
+            /*(object) [
                 'name' => __('nav.book'),
                 'link' => url('/book'),
                 'published' => $this->book->published
-            ],
+            ],*/
             (object) [
                 'name' => __('nav.contacts'),
                 'link' => route('client.contacts.index')
@@ -102,16 +102,16 @@ class Navigation
                         'name' => __('nav.contacts'),
                         'link' => route('client.contacts.index')
                     ],
-                    (object) [
+                    /*(object) [
                         'name' => __('nav.book'),
                         'link' => url('/book'),
                         'published' => $this->book->published
-                    ]
+                    ]*/
                 ]
             ],
         ];
 
-        $sections = $this->exhibits->filter(function ($section) {
+        /*$sections = $this->exhibits->filter(function ($section) {
             return !$section->parent_id;
         });
 
@@ -128,7 +128,7 @@ class Navigation
                     ];
                 })
             ]);
-        }
+        }*/
 
         return $items;
     }
@@ -152,27 +152,27 @@ class Navigation
                 'icon' => 'i-gallery',
             ]),
             new Delimiter(),
-            new NavItem([
+          /*  new NavItem([
                 'name' => 'Экспонаты',
                 'route' => 'exhibits',
                 'icon' => 'i-gallery',
-            ]),
+            ]),*/
 //            new NavItem([
 //                'name' => 'Публикации',
 //                'route' => 'publications',
 //                'icon' => 'i-layers',
 //            ]),
-            new NavItem([
+           /* new NavItem([
                 'name' => 'Секции',
                 'route' => 'sections',
                 'icon' => 'i-structure',
-            ]),
+            ]),*/
           /*  new NavItem([
                 'name' => 'Авторы',
                 'route' => 'authors',
                 'icon' => 'i-users',
             ]),*/
-            new Delimiter(),
+           /* new Delimiter(),*/
             new NavItem([
                 'name' => 'Пресс-центр',
                 'route' => 'posts',

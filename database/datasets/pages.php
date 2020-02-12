@@ -14,28 +14,6 @@ return [
     ],
     [
         'title' => [
-            'ru' => 'Экспертиза и оценка',
-            'en' => 'Expertise and estimate'
-        ],
-        'slug' =>'expertise',
-        'body' => [
-            'ru' => "Экспертиза и оценка",
-            'en' => 'Expertise and estimate '
-        ],
-    ],
-    [
-        'title' => [
-            'ru' => 'Книга',
-            'en' => 'Book'
-        ],
-        'slug' =>'book',
-        'body' => [
-            'ru' => "Книга",
-            'en' => 'Book'
-        ],
-    ],
-    [
-        'title' => [
             'ru' => 'Каталог',
             'en' => 'Catalog'
         ],

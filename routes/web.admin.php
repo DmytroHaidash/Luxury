@@ -10,16 +10,16 @@ Route::group([
         return redirect()->route('admin.posts.index');
     });
 
-    Route::resource('authors', 'AuthorsController')->except('show');
+   /* Route::resource('authors', 'AuthorsController')->except('show');
     Route::resource('sections', 'SectionsController')->except('show');
-    Route::resource('exhibits', 'ExhibitsController')->except('show');
+    Route::resource('exhibits', 'ExhibitsController')->except('show');*/
 
     Route::resource('posts', 'PostsController')->except('show');
     Route::resource('categories', 'CategoriesController')->except('show');
 
-    Route::resource('cities', 'CitiesController')->except('show');
+   /* Route::resource('cities', 'CitiesController')->except('show');
     Route::resource('places', 'PlacesController')->except('show');
-    Route::resource('exhibitions', 'ExhibitionsController')->except('show');
+    Route::resource('exhibitions', 'ExhibitionsController')->except('show');*/
 
     Route::resource('pages', 'PagesController')->except('show');
     Route::resource('publications', 'PublicationsController')->except('show');
