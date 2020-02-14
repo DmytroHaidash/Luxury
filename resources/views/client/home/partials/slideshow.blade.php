@@ -15,6 +15,7 @@
             </div>
         </div>
         @foreach($sections as $section)
+            @if($section->hasMedia('cover'))
             <div class="slide slide--current">
                 <figure class="slide__img"
                         style="background-image: url({{ optional($section->getFirstMedia('cover'))->getFullUrl('banner') }});">
@@ -27,6 +28,7 @@
                     </a>
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
 

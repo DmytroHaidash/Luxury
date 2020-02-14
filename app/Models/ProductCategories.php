@@ -42,7 +42,7 @@ class ProductCategories extends Model implements Sortable, HasMedia
      */
     public function products(): BelongsToMany
     {
-        return $this->belongsToMany(Product::class, 'category_product', 'product_id', 'category_id');
+        return $this->belongsToMany(Product::class, 'category_product', 'category_id','product_id' );
     }
 
     /**
