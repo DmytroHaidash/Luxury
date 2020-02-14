@@ -5,12 +5,12 @@
         </svg>
     </div>
 
-    <h5 class="text-2xl text-center mb-5">{{$product->translate('title')}} </h5>
+    <h5 class="text-2xl text-black text-center mb-5">{{$product->translate('title')}} </h5>
     <form action="{{ route('client.catalog.buy', $product)}}" method="post">
         @csrf
 
         <div class="mb-5">
-            <label for="name" class="block font-bold uppercase text-xs mb-2">@lang('pages.book.name')</label>
+            <label for="name" class="block font-bold uppercase text-black text-xs mb-2">@lang('pages.book.name')</label>
             <input type="text" class="form-control @error('name') border-red @enderror" id="name" name="name"
                    value="{{ old('name') }}" required>
             @error('name')
@@ -21,7 +21,7 @@
         </div>
 
         <div class="mb-5">
-            <label for="phone" class="block font-bold uppercase text-xs mb-2">@lang('forms.phone')</label>
+            <label for="phone" class="block font-bold uppercase text-black text-xs mb-2">@lang('forms.phone')</label>
             <input type="tel" class="form-control @error('phone') border-red @enderror" id="phone" name="contact[phone]"
                    value="{{ old('phone') }}" required>
             @error('contact')
@@ -31,7 +31,7 @@
             @enderror
         </div>
         <div class="mb-5">
-            <label for="email" class="block font-bold uppercase text-xs mb-2">@lang('forms.email')</label>
+            <label for="email" class="block font-bold uppercase text-black text-xs mb-2">@lang('forms.email')</label>
             <input type="email" class="form-control @error('email') border-red @enderror" id="email" name="contact[email]"
                    value="{{ old('email') }}" required>
             @error('contact')
@@ -41,7 +41,7 @@
             @enderror
         </div>
         <div class="mb-5">
-            <label for="message" class="block font-bold uppercase text-xs mb-2">@lang('forms.message.order')</label>
+            <label for="message" class="block font-bold uppercase text-black text-xs mb-2">@lang('forms.message.order')</label>
             <textarea class="form-control border" id="message"
                       name="message">{{ old('message') }}</textarea>
         </div>
