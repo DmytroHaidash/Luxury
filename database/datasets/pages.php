@@ -14,6 +14,17 @@ return [
     ],
     [
         'title' => [
+            'ru' => 'Главная',
+            'en' => 'Home'
+        ],
+        'slug' => 'home',
+        'body' => [
+            'ru' => "Главная",
+            'en' => 'Home'
+        ]
+    ],
+    [
+        'title' => [
             'ru' => 'Каталог',
             'en' => 'Catalog'
         ],
