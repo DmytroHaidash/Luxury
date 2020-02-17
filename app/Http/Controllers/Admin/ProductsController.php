@@ -46,7 +46,7 @@ class ProductsController extends Controller
     public function create(): View
     {
         return \view('admin.products.create', [
-            'categories' => ProductCategories::get(),
+            'categories' => ProductCategories::onlyParents()->get(),
         ]);
     }
 
@@ -86,7 +86,7 @@ class ProductsController extends Controller
     {
         return \view('admin.products.edit', [
             'product' => $product,
-            'categories' => ProductCategories::get(),
+            'categories' => ProductCategories::onlyParents()->get(),
         ]);
     }
 

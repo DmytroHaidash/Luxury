@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index(): View
     {
         $posts = Post::take(6)->get();
-        $sections = ProductCategories::get();
+        $sections = ProductCategories::onlyParents()->get();
         $meta = Page::where('slug', 'home')->first();
        /* $sections = app('sections')->filter(function ($section) {
             return is_null($section->parent_id);

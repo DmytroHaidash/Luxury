@@ -27,6 +27,20 @@
                                 </div>
                             </fieldset>
                         @endforeach
+                            @if ($categories->count())
+                                <div class="form-group">
+                                    <label for="category">Родительская категория</label>
+                                    <select name="parent_id" id="category" class="form-control">
+                                        <option value="">-----</option>
+                                        @foreach($categories as $category)
+                                            <option value="{{ $category->id }}"
+                                                    {{ $product_category->parent_id == $category->id ? 'selected' : '' }}>
+                                                {{ $category->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            @endif
                     </block-editor>
                     @includeIf('partials.admin.meta', ['meta' => $product_category->meta()->first()])
                 </div>

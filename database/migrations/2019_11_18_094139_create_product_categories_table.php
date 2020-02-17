@@ -17,8 +17,11 @@ class CreateProductCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('slug');
             $table->json('title');
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedInteger('sort_order')->default(1);
             $table->timestamps();
+
+            $table->foreign('parent_id')->references('id')->on('sections')->onDelete('set null');
         });
     }
 

@@ -52,6 +52,39 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="section">Категория</label>
+                        <ul class="list-unstyled">
+                            @foreach($categories as $section)
+                                <li>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input"
+                                               id="category-{{$section->id}}" name="categories[]"
+                                               value="{{ $section->id }}">
+                                        <label class="custom-control-label font-weight-bold"
+                                               for="category-{{$section->id}}">
+                                            {{ $section->title }}
+                                        </label>
+                                    </div>
+                                </li>
+
+                                @if ($section->children->count())
+                                    @foreach($section->children as $child)
+                                        <li class="ml-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input"
+                                                       id="category-{{$child->id}}" name="categories[]"
+                                                       value="{{ $child->id }}">
+                                                <label class="custom-control-label" for="category-{{$child->id}}">
+                                                    {{ $child->title }}
+                                                </label>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                   {{-- <div class="form-group">
                         @if ($categories->count())
                             <label>Категории</label>
                             <div class="d-flex flex-wrap">
@@ -70,7 +103,7 @@
                                 @endforeach
                             </div>
                         @endif
-                    </div>
+                    </div>--}}
                 </div>
             </div>
 

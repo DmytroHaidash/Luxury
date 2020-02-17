@@ -9,7 +9,7 @@
 
 
             <div class="flex flex-wrap">
-                @foreach($section->products as $child)
+                @foreach($section->children as $child)
                     <article class="teaser section-teaser w-full lg:flex-1">
                         <figure class="lozad teaser__thumbnail"
                                 data-background-image="{{ $child->getFirstMediaUrl('uploads') }}"></figure>
@@ -22,11 +22,11 @@
                                 </h4>
                             </div>
 
-                            @if ($child->hasTranslation('description'))
+                            {{--@if ($child->hasTranslation('description'))
                                 <div class="teaser__description mt-3 px-6 lg:px-10">
                                     {{ Str::limit($child->description, 150) }}
                                 </div>
-                            @endif
+                            @endif--}}
                         </a>
                     </article>
                 @endforeach
