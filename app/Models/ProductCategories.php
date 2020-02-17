@@ -83,13 +83,12 @@ class ProductCategories extends Model implements Sortable, HasMedia
     }
 
     /**
-     * @param  string  $collection
      * @return string
      */
-    public function getThumb($collection = 'cover')
+    public function getThumb()
     {
-        if ($this->hasMedia($collection)) {
-            return $this->getFirstMedia($collection)->getFullUrl('thumb');
+        if ($this->hasMedia('cover')) {
+            return $this->getFirstMedia('cover')->getFullUrl('thumb');
         }
 
         return asset('images/no-image.png');

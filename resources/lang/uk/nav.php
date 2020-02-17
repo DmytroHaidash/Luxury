@@ -11,5 +11,6 @@ return [
     'contacts' => 'Контакти',
     'previous' => 'Попередня',
     'next' => 'Наступна',
-    'catalog' => 'Каталог'
+    'catalog' => 'Каталог',
+    'payment' => 'Payment and delivery'
 ];

@@ -57,13 +57,7 @@
                             @foreach($categories as $section)
                                 <li>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
-                                               id="category-{{$section->id}}" name="categories[]"
-                                               value="{{ $section->id }}">
-                                        <label class="custom-control-label font-weight-bold"
-                                               for="category-{{$section->id}}">
                                             {{ $section->title }}
-                                        </label>
                                     </div>
                                 </li>
 

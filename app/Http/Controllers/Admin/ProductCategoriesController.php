@@ -73,6 +73,7 @@ class ProductCategoriesController extends Controller
      */
     public function update(Request $request, ProductCategories $product_category): RedirectResponse
     {
+        $product_category->fill($request->only('parent_id'));
         $product_category->makeTranslation(['title'])->save();
 
         if ($request->hasFile('cover')) {

@@ -39,7 +39,7 @@
                     </block-editor>
                     @includeIf('partials.admin.meta', ['meta' => $product->meta()->first()])
                     <multi-uploader class="mt-4"
-                            :src="{{ json_encode(\App\Http\Resources\MediaResource::collection($product->getMedia('uploads'))) }}"></multi-uploader>
+                                    :src="{{ json_encode(\App\Http\Resources\MediaResource::collection($product->getMedia('uploads'))) }}"></multi-uploader>
                 </div>
 
                 <div class="col-lg-3">
@@ -60,14 +60,7 @@
                             @foreach($categories as $section)
                                 <li>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input"
-                                               id="category-{{$section->id}}" name="categories[]"
-                                               {{ in_array($section->id, $product->categories->pluck('id')->toArray()) ? 'checked' : '' }}
-                                               value="{{ $section->id }}">
-                                        <label class="custom-control-label font-weight-bold"
-                                               for="category-{{$section->id}}">
-                                            {{ $section->title }}
-                                        </label>
+                                        {{ $section->title }}
                                     </div>
                                 </li>
 

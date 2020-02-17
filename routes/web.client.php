@@ -6,6 +6,7 @@ Route::group([
 ], function () {
     Route::get('/', 'HomeController@index')->name('index');
 
+    Route::get('category/{section}/{child_section?}', 'CatalogController@categories')->name('category');
     Route::group([
         'as' => 'catalog.',
     ], function () {
@@ -53,7 +54,7 @@ Route::group([
         ->where('locale', '('.implode('|', config('app.locales')).')');
 
     Route::get('{page}/{subpage?}', 'PagesController@show')
-        ->where('page', '(about|book|expertise)');
+        ->where('page', '(about|book|expertise|payment-and-delivery)');
     Route::post('/question', 'PagesController@question')->name('question');
     Route::post('/order', 'PagesController@order')->name('order');
 });

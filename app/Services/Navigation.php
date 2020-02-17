@@ -2,6 +2,7 @@
 
 namespace App\Services;
 use App\Models\Page;
+use App\Models\ProductCategories;
 use Talanoff\ImpressionAdmin\Helpers\NavItem;
 
 class Delimiter
@@ -14,12 +15,14 @@ class Navigation
     private $exhibits;
     private $book;
     private $publications;
+    private $categories;
 
     public function __construct()
     {
         $this->exhibits = app('sections')->filter(function ($section) {
             return $section->type == 'exhibit';
         });
+        $this->categories = ProductCategories::get();
         $this->book = Page::where('slug', 'book')->first();
 //        $this->publications = app('sections')->filter(function($section) {
 //            return $section->type == 'publication';
@@ -31,7 +34,10 @@ class Navigation
         return [
             (object)[
                 'name' => trans('nav.catalog'),
-                'link' => route('client.catalog.index'),
+                'link' => null,
+                'children' => $this->categories->map(function ($item) {
+                    return $this->handleChild($item);
+                })
             ],
             (object) [
                 'name' => __('nav.about'),
@@ -69,6 +75,10 @@ class Navigation
                 'published' => $this->book->published
             ],*/
             (object) [
+                'name' => __('nav.payment'),
+                'link' => url('/payment-and-delivery')
+            ],
+            (object) [
                 'name' => __('nav.contacts'),
                 'link' => route('client.contacts.index')
             ]
@@ -98,6 +108,10 @@ class Navigation
                         'name' => __('nav.exhibitions'),
                         'link' => route('client.exhibitions.index')
                     ],*/
+                    (object) [
+                        'name' => __('nav.payment'),
+                        'link' => url('/payment-and-delivery')
+                    ],
                     (object) [
                         'name' => __('nav.contacts'),
                         'link' => route('client.contacts.index')
@@ -227,7 +241,7 @@ class Navigation
 
         return (object) [
             'name' => $item->title,
-            'link' => route('client.collection.index', $sections),
+            'link' => $item->parent_id ? route('client.catalog.index', ['category'=> $item->slug]) : route('client.category', $sections),
             'is_parent' => is_null($item->parent_id)
         ];
     }

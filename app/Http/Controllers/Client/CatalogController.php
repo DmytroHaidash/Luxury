@@ -61,6 +61,16 @@ class CatalogController extends Controller
             'products' => $products->get(),
         ]);
     }
+    public function categories(ProductCategories $section, ProductCategories $child_section = null):View
+    {
+        if ($child_section) {
+            $section = $child_section;
+        }
+
+        $exhibits = $section->children()->paginate(12);
+
+        return view('client.catalog.section', compact('exhibits', 'section'));
+    }
 
     /**
      * @param Product $product

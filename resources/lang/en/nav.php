@@ -13,5 +13,6 @@ return [
     'next' => 'Next',
     'expertise'=> 'Expertise and estimate',
     'book' => 'Book',
-    'catalog' => 'Catalog'
+    'catalog' => 'Catalog',
+    'payment' => 'Payment and delivery'
 ];

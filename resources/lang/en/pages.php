@@ -70,5 +70,7 @@ return [
         'buy' => 'Buy',
         'ordered' => 'Already ordered',
         'question' => 'Ask a question',
+        'in_stock' => 'Available',
+        'out_of_stock' => 'Under the order'
     ]
 ];

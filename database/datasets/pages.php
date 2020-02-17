@@ -25,6 +25,17 @@ return [
     ],
     [
         'title' => [
+            'ru' => 'Оплата и доставка',
+            'en' => 'Payment and delivery'
+        ],
+        'slug' => 'payment-and-delivery',
+        'body' => [
+            'ru' => "Оплата и доставка",
+            'en' => 'Payment and delivery'
+        ]
+    ],
+    [
+        'title' => [
             'ru' => 'Каталог',
             'en' => 'Catalog'
         ],
