@@ -52,7 +52,7 @@
     </nav>
 
     <div class="w-40 flex items-center ml-auto">
-        <div class="language-switcher px-3 ml-auto">
+        {{--<div class="language-switcher px-3 ml-auto">
             {{ app()->getLocale() }}
 
             @php
@@ -68,7 +68,7 @@
                     </li>
                 @endforeach
             </ul>
-        </div>
+        </div>--}}
 
         <div class="search">
             <a href="#" data-show-search>
