@@ -3,9 +3,10 @@
         <div class="slide slide--current">
             <figure class="slide__img" style="background-image: url({{ $meta->hasMedia('cover') ? $meta->getFirstMediaUrl('cover') :asset('images/background.jpg') }});"></figure>
             <div class="slide__title">
-                <svg fill="#fff" class="slide__title-logo">
+                <img src="/images/LWC.png" alt="">
+                {{--<svg fill="#fff" class="slide__title-logo">
                     <use xlink:href="#logo"></use>
-                </svg>
+                </svg>--}}
             </div>
             <div class="slide__desc" hidden></div>
             <div class="slide__link mt-6">
