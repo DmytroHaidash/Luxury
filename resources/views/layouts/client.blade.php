@@ -15,7 +15,7 @@
 
 <div id="app" class="flex flex-col min-h-screen">
     @includeIf('partials.client.layout.header')
-    @includeIf('partials.client.layout.mesengers')
+    {{--@includeIf('partials.client.layout.mesengers')--}}
     <main class="flex-1">
 
         @yield('content')
