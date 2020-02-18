@@ -1,7 +1,8 @@
 <header class="app-header">
-    <div class="logo self-start h-full">
-        <a href="{{ url('/') }}" class="block h-full">
-            <img src="/images/LWC.png" alt="">
+    <div class="logo">
+        <a href="{{ url('/') }}">
+            <img src="/images/LWC.png" alt="" width="160" height="82">
+
         </a>
     </div>
 

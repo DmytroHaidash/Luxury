@@ -1,8 +1,8 @@
 <footer class="pt-10 pb-4 overflow-hidden">
     <div class="container">
-        <div class="text-center inset-x-0 mx-auto">
-            <a href="{{ url('/') }}" class="inline-flex">
-                <img src="/images/LWC.png" alt="">
+        <div class="text-center">
+            <a href="{{ url('/') }}">
+                <img src="/images/LWC.png" alt="" width="160" height="82">
             </a>
         </div>
 
