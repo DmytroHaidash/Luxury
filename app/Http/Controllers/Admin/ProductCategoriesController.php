@@ -62,7 +62,7 @@ class ProductCategoriesController extends Controller
      */
     public function edit(ProductCategories $product_category): View
     {
-        $categories = ProductCategories::onlyParents()->get();
+        $categories = ProductCategories::onlyParents()->where('id', '!=', $product_category->id)->get();
         return \view('admin.product_categories.edit', compact('product_category', 'categories'));
     }
 
