@@ -2,9 +2,7 @@
     <div class="container">
         <div class="text-center inset-x-0 mx-auto">
             <a href="{{ url('/') }}" class="inline-flex">
-                <svg fill="#fff" width="240" height="80">
-                    <use xlink:href="#logo"></use>
-                </svg>
+                <img src="/images/LWC.png" alt="">
             </a>
         </div>
 
