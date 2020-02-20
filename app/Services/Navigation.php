@@ -22,7 +22,7 @@ class Navigation
         $this->exhibits = app('sections')->filter(function ($section) {
             return $section->type == 'exhibit';
         });
-        $this->categories = ProductCategories::get();
+        $this->categories = ProductCategories::onlyParents()->get();
         $this->book = Page::where('slug', 'book')->first();
 //        $this->publications = app('sections')->filter(function($section) {
 //            return $section->type == 'publication';
@@ -33,12 +33,28 @@ class Navigation
     {
         return [
             (object)[
+                'name' => __('nav.catalog'),
+                'link' => null,
+                'submenu' => $this->categories->map(function($section) {
+                    return (object)[
+                        'name' => $section->title,
+                        'link' => route('client.category', $section),
+                        'children' => $section->children->map(function ($child) use ($section) {
+                            return (object)[
+                                'name' => $child->title,
+                                'link' => route('client.catalog.index', ['category'=> $child->slug])
+                            ];
+                        })
+                    ];
+                })
+            ],
+           /* (object)[
                 'name' => trans('nav.catalog'),
                 'link' => null,
                 'children' => $this->categories->map(function ($item) {
                     return $this->handleChild($item);
                 })
-            ],
+            ],*/
             (object) [
                 'name' => __('nav.about'),
                 'link' => url('/about')
