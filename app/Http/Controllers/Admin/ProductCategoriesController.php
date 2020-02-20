@@ -41,7 +41,6 @@ class ProductCategoriesController extends Controller
 
         if ($request->hasFile('cover')) {
             $product_category->addMediaFromRequest('cover')
-                ->usingFileName(makeFileName($request->file('cover')))
                 ->toMediaCollection('cover');
         }
         if ($request->has('meta')) {
@@ -79,7 +78,6 @@ class ProductCategoriesController extends Controller
         if ($request->hasFile('cover')) {
             $product_category->clearMediaCollection('cover');
             $product_category->addMediaFromRequest('cover')
-                ->usingFileName(makeFileName($request->file('cover')))
                 ->toMediaCollection('cover');
         }
 
