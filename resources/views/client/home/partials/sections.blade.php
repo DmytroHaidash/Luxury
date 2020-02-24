@@ -10,7 +10,7 @@
 
             <div class="flex flex-wrap">
                 @foreach($section->children as $child)
-                    @if($loop->index > 4)
+                    @if($loop->index < 4)
                     <article class="teaser section-teaser w-full lg:flex-1">
                         <figure class="lozad teaser__thumbnail"
                                 data-background-image="{{ $child->getThumb() }}"></figure>
