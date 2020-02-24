@@ -4,7 +4,8 @@
     top: 50%;
     z-index: -1;
     transform: translateY(-50%);
-    background-color: #cad2d4;
+    background-color: #040053;
+    border-radius: 50%;
   }
 
   &--decorated {
@@ -17,7 +18,7 @@
         @apply absolute font-serif italic;
         top: 50%;
         transform: translateY(-50%);
-        content: 'Feldman Family Museum';
+        content: 'Luxury Weapon Cases';
         white-space: nowrap;
         font-size: 8px;
         opacity: 0.1;
@@ -25,11 +26,11 @@
       }
 
       &::before {
-        right: 102%;
+        right: 110%;
       }
 
       &::after {
-        left: 102%;
+        left: 110%;
       }
     }
   }
