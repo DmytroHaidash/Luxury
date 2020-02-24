@@ -32,6 +32,11 @@ class Navigation
     public function header()
     {
         return [
+
+            (object) [
+                'name' => __('nav.about'),
+                'link' => url('/about')
+            ],
             (object)[
                 'name' => __('nav.catalog'),
                 'link' => null,
@@ -48,6 +53,10 @@ class Navigation
                     ];
                 })
             ],
+            (object) [
+                'name' => __('nav.payment'),
+                'link' => url('/payment-and-delivery')
+            ],
            /* (object)[
                 'name' => trans('nav.catalog'),
                 'link' => null,
@@ -55,10 +64,7 @@ class Navigation
                     return $this->handleChild($item);
                 })
             ],*/
-            (object) [
-                'name' => __('nav.about'),
-                'link' => url('/about')
-            ],
+
             /*(object) [
                 'name' => __('nav.collection'),
                 'link' => null,
@@ -90,10 +96,7 @@ class Navigation
                 'link' => url('/book'),
                 'published' => $this->book->published
             ],*/
-            (object) [
-                'name' => __('nav.payment'),
-                'link' => url('/payment-and-delivery')
-            ],
+
             (object) [
                 'name' => __('nav.contacts'),
                 'link' => route('client.contacts.index')

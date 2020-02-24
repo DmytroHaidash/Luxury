@@ -3,8 +3,7 @@
 
     @if ($section->children->count())
             <h2 class="text-center text-3xl my-12 relative z-20 font-heading title--decorated">
-                <span>{{ $section->title }}</span>
-                {{--<div class="title-decoration inset-x-0 mx-auto w-40 h-16"></div>--}}
+                <span class="title-decoration">{{ $section->title }}</span>
             </h2>
 
 
