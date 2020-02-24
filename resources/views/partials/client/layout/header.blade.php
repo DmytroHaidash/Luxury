@@ -56,7 +56,7 @@
         </ul>
     </nav>
 
-    <div class="w-40 flex items-center ml-auto">
+    <div class="w-20 lg:w-10 flex items-center ml-auto">
         {{--<div class="language-switcher px-3 ml-auto">
             {{ app()->getLocale() }}
 
@@ -74,7 +74,13 @@
                 @endforeach
             </ul>
         </div>--}}
-
+        <div class="toggle-nav mr-4">
+            <a href="#" data-toggle-nav>
+                <svg width="24" height="24" class="fill-current">
+                    <use xlink:href="#nav"></use>
+                </svg>
+            </a>
+        </div>
         <div class="search">
             <a href="#" data-show-search>
                 <svg width="24" height="24" class="fill-current">
@@ -82,13 +88,7 @@
                 </svg>
             </a>
         </div>
-        <div class="toggle-nav ml-4">
-            <a href="#" data-toggle-nav>
-                <svg width="24" height="24" class="fill-current">
-                    <use xlink:href="#nav"></use>
-                </svg>
-            </a>
-        </div>
+
     </div>
 
     <form action="{{ route('client.search.index') }}" method="get"
