@@ -17,7 +17,7 @@ class CategoriesController extends Controller
      */
     public function index(): View
     {
-        $categories = Category::onlyParents()->withCount('posts')->orderBy('title->ru')->paginate(20);
+        $categories = Category::onlyParents()->withCount('posts')->paginate(20);
 
         return view('admin.categories.index', compact('categories'));
     }
@@ -27,7 +27,7 @@ class CategoriesController extends Controller
      */
     public function create(): View
     {
-        $categories = Category::onlyParents()->orderBy('title->ru')->get();
+        $categories = Category::onlyParents()->get();
 
         return view('admin.categories.create', compact('categories'));
     }
@@ -56,7 +56,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category): View
     {
-        $categories = Category::onlyParents()->orderBy('title->ru')->where('id', '!=', $category->id)->get();
+        $categories = Category::onlyParents()->where('id', '!=', $category->id)->get();
 
         return view('admin.categories.edit', compact('category', 'categories'));
     }

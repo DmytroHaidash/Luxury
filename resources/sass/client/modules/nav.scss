@@ -10,7 +10,7 @@
   }
 
   @screen lg {
-    @apply static block bg-transparent text-white;
+    @apply static block bg-transparent text-black;
     overflow: initial;
 
     .app-nav__close {

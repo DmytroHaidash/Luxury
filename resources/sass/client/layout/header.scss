@@ -1,5 +1,5 @@
 .app-header {
-	@apply p-3 flex items-center absolute inset-x-0 top-0 z-50 h-20 text-white text-sm;
+	@apply p-3 flex items-center absolute inset-x-0 top-0 z-50 h-20 text-black text-sm;
 
 	&::before {
 		@apply absolute inset-x-0 top-0;

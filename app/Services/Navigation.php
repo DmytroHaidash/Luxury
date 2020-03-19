@@ -119,10 +119,10 @@ class Navigation
                         'name' => __('nav.blog'),
                         'link' => route('client.blog.index')
                     ],
-                    (object) [
+                    /*(object) [
                         'name' => __('nav.expertise'),
                         'link' => url('/expertise')
-                    ],
+                    ],*/
                     /*(object) [
                         'name' => __('nav.exhibitions'),
                         'link' => route('client.exhibitions.index')
