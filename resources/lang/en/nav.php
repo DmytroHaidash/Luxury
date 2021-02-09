@@ -14,5 +14,5 @@ return [
     'expertise'=> 'Expertise and estimate',
     'book' => 'Book',
     'catalog' => 'Catalog',
-    'payment' => 'Payment and delivery'
+    'payment' => 'Order , Payment, Shipping'
 ];
