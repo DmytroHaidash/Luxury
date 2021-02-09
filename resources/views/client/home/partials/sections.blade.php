@@ -12,7 +12,7 @@
                     @if($loop->index < 4)
                     <article class="teaser section-teaser w-full lg:flex-1">
                         <figure class="lozad teaser__thumbnail"
-                                data-background-image="{{ $child->getPrewiew() }}"></figure>
+                                data-background-image="{{ $child->getPreview() }}"></figure>
 
                         <a class="teaser__link p-6 lg:p-10"
                            href="{{ route('client.catalog.index', ['category'=> $child->slug]) }}">
