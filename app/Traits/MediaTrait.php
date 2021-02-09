@@ -26,8 +26,13 @@ trait MediaTrait
             ->sharpen(10);
 
         $this->addMediaConversion('thumb')
-            ->width(360)
+            ->width(500)
             ->height(360)
+            ->sharpen(10);
+
+        $this->addMediaConversion('preview')
+            ->width(500)
+            ->height(300)
             ->sharpen(10);
 
         $this->addMediaConversion('banner')
@@ -57,6 +62,19 @@ trait MediaTrait
     {
         if ($this->hasMedia($collection)) {
             return $this->getFirstMedia($collection)->getFullUrl('thumb');
+        }
+
+        return asset('images/no-image.png');
+    }
+
+    /**
+     * @param  string  $collection
+     * @return string
+     */
+    public function getPreview($collection = 'cover')
+    {
+        if ($this->hasMedia($collection)) {
+            return $this->getFirstMedia($collection)->getFullUrl('preview');
         }
 
         return asset('images/no-image.png');
