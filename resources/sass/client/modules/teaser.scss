@@ -18,7 +18,7 @@
   &__thumbnail {
     @apply absolute inset-0 bg-cover bg-no-repeat bg-center;
     z-index: -2;
-    transform: scale(1.1);
+    transform: scale(1);
     transition: 1s;
   }
 
@@ -38,7 +38,7 @@
     }
 
     .teaser__thumbnail {
-      transform: scale(1);
+      transform: scale(0.9);
     }
 
     .title span {
